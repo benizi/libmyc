@@ -1140,3 +1140,12 @@ void print_fifo (FIFO fifo) {
 	printf("DONE PRINTING FIFO\n");
 }
 
+double time_to_double (struct timeval t) {
+	return t.tv_sec + ((double)t.tv_usec/1000000);
+}
+
+double NOW (void) {
+	struct timeval now;
+	if (gettimeofday(&now,NULL)) return 0.0;
+	return time_to_double(now);
+}

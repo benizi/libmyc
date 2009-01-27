@@ -4,6 +4,7 @@
 #define _GNU_SOURCE // for dprintf
 #include <stdio.h> // for size_t
 #include <stdarg.h> // for va_list
+#include <sys/time.h> // for struct timeval
 
 #define GUARD ((char*)NULL)
 
@@ -93,5 +94,8 @@ void init_rand (void);
 double random_number (void);
 
 void auto_remake (char **argv);
+
+double NOW (void);
+double time_to_double (struct timeval t);
 
 #endif
